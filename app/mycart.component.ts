@@ -7,6 +7,7 @@ export class MyCart {
 	public cart: Product[]= [];
 
 	addToCart( item:Product ){
+		
 		this.cart.push(item);
 	}
 	getCart(){

@@ -4,13 +4,15 @@ import { AllProductService } from './allProduct.service';
 import { AllProductsComponent } from './allproduct.component';
 import { MyCart } from './mycart.component';
 
+
 @Component({
   selector: 'my-app',
+
   template: `
   <div class="myBody">
   <h1>{{title}}</h1>
   <button><a [routerLink]="['Cart']">All Products</a></button>
-  <button>Cart</button>
+  <button>Cart{{CartItems}}</button>
  <router-outlet></router-outlet>
    </div>
   `,
@@ -32,5 +34,11 @@ import { MyCart } from './mycart.component';
 ])
 export class AppComponent {
   title = 'welcome';
+  public CartItems:number=0;
+
+  constructor(private _mycart:MyCart){
+    this.CartItems = _mycart.TotalItem();
+  }
+ 
 }
 
