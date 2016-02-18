@@ -1,0 +1,19 @@
+.myBody h1 {
+    text-align: center;
+    color: darkgrey;
+    text-shadow: darkslateblue;
+    font-family: cursive;
+    font-weight: bolder;
+}
+.myBody button {
+    text-align: center;
+    padding: 23px 34px;
+    border: none;
+    background: burlywood;
+    border: 1px solid darkgray;
+    border-radius: 34px;
+    cursor: pointer;
+}
+.myBody{
+    text-align: center;
+}
