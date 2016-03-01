@@ -1,4 +1,4 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit, EventEmitter } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { Product } from './product';
 import { AllProductService } from './allProduct.service';
@@ -41,6 +41,7 @@ export class AllProductsComponent  {
 
   public Prod: Product[] = [];
   public _myCartItems:Product[];
+ 
 
   constructor( private _router: Router, poewr: AllProductService, private _myCart:MyCart) {
     this.Prod = poewr.getHeroes()._result;
@@ -49,12 +50,12 @@ export class AllProductsComponent  {
 
   addTocart(item:Product){
     this._myCart.addToCart(item);
+    
   }
 
   buttonState(item:Product){
       var CartProduct = this._myCart.getCart();
-      console.log(CartProduct);
-    console.log(item);
+    
       if (CartProduct) {
           for (var i = CartProduct.length - 1; i >= 0; i--) {
         console.info(CartProduct[i]);

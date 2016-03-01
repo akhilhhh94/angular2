@@ -1,16 +1,21 @@
 import { Product } from './product';
-import { Injectable } from 'angular2/core';
+import { Injectable, EventEmitter } from 'angular2/core';
+
 
 @Injectable()
 export class MyCart {
 
 	public cart: Product[]= [];
+	UpdateCart: EventEmitter<number> = new EventEmitter();
 
-	addToCart( item:Product ){
-		
+
+	addToCart(item: Product) {
+
 		this.cart.push(item);
+		this.updateDom();
+
 	}
-	getCart(){
+	getCart() {
 		return this.cart;
 	}
 	clearCart(){
@@ -21,5 +26,11 @@ export class MyCart {
 	}
 	TotalItem(){
 		return this.cart.length || 0;
+	}
+	updateDom(){
+        this.UpdateCart.emit(this.TotalItem());
+	}
+	getNavChangeEmitter() {
+	 	return this.UpdateCart;
 	}
 }
