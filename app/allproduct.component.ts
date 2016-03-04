@@ -4,6 +4,7 @@ import { Product } from './product';
 import { AllProductService } from './allProduct.service';
 import { MyCart } from './mycart.component';
 import { cartFilter } from './cartFilter.pipe';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 @Component({
   selector: 'my-dashboard',
   template: `
@@ -20,6 +21,7 @@ import { cartFilter } from './cartFilter.pipe';
     </div>
    `,
   pipes: [cartFilter],
+  directives: [ROUTER_DIRECTIVES],
   styles: [`
     li {
         display: block;
