@@ -62,7 +62,6 @@ export class AllProductsComponent  {
           for (var i = CartProduct.length - 1; i >= 0; i--) {
         console.info(CartProduct[i]);
             if(CartProduct[i].id ===item.id){
-        console.info(item.name);
                 return true;
             }else{
                 //return false;
