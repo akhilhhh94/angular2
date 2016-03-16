@@ -5,6 +5,7 @@ import { AllProductsComponent } from './allproduct.component';
 import { MyCart } from './mycart.component';
 import { ShowCart } from './showcart.component';
 import { HomeComponent } from './home.component';
+import { LoginComponent } from './login.component';
 
 
 @Component({
@@ -18,9 +19,11 @@ import { HomeComponent } from './home.component';
    <button><a [routerLink]="['Cart']" >Cart ({{CartItems}})</a></button>
  <router-outlet></router-outlet>
    </div>
+   <login></login>
   `,
   styleUrls: ['css/app.component.css'],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES,LoginComponent
+],
   providers: [
     ROUTER_PROVIDERS,
     AllProductService,
